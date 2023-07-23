@@ -17,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        pr_number: ${{ join(needs.get_pr_numbers.outputs.pr_numbers, ',') }}
+        pr_number: ${{ needs.get_pr_numbers.outputs.pr_numbers }}
 
     steps:
     # Add your desired steps here
