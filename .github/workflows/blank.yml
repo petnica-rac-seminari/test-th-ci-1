@@ -15,14 +15,10 @@ jobs:
   pr_collector:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        pr_number: ${{ needs.get_pr_numbers.outputs.pr_numbers }}
-
     steps:
     # Add your desired steps here
     - name: Step 1
-      run: echo "Running Step 1 for PR ${{ matrix.pr_number }}"
+      run: echo "Running Step 1 for PR ${{ needs.get_pr_numbers.outputs.pr_numbers }}"
 #jobs:
   #your_job_name:
     #runs-on: ubuntu-latest
