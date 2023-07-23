@@ -1,0 +1,26 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  # Triggers the workflow on push or pull request events but only for the "master" branch
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+    types: [opened, synchronize, reopened]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  your_job_name:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Add your desired steps here
+    - name: Step 1
+      run: echo "Running Step 1 - ${{ github.event.pull_request.title }}"
